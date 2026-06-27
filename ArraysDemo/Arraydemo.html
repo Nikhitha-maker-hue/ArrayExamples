@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+    <div class="form-container">
+        <label for="">data</label>
+        <input type="text"  id="data">
+    </div>
+    <div id="result"></div>
+    <div class="add">
+        <button id="addbutton" onclick="adddata()">Add</button>
+        <button id="largest" onclick="largest()">largest</button>
+        <button id="smallest" onclick="smallest()">smallest</button>
+    </div>
+    </section>
+    <script>
+        var data=[]
+        function adddata(){
+            let input=parseInt(document.getElementById("data").value);
+            if(isNaN(input)){
+                alert("please enter a valid number")
+                return;
+            }
+            data.push(input);
+            document.getElementById("result").innerHTML=data;
+        }
+        function largest(){
+            let large=data[0];
+            for(let x of data){
+                if(x>large){
+                large=x;
+            }
+        }
+            document.getElementById("result").innerHTML="largest:"+large;
+        }
+        function smallest(){
+            let small=data[0];
+            for(let x of data){
+                if(x<small){
+                small=x;
+            }
+        }
+            document.getElementById("result").innerHTML="smalles:"+small;
+    }
+    </script>
+</body>
+</html>

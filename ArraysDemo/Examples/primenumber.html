@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Checker</title>
+ <style>
+        * {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="form-group">
+            <label for="data">Data:</label>
+            <input type="text" name="data" id="data">
+        </div>
+        <div id="result"></div>
+        <div class="form-group">
+            <button onclick="add()">Add Data</button>
+            <button onclick="displayPrime()">Check</button>
+        </div>
+    </section>
+
+    <script>
+        var data = [];
+
+          function isPrime(input) {
+            if (input <= 1) return false;
+
+            for (let i = 2; i <= Math.sqrt(input); i++) {
+                if (input % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function add(){
+            let input = parseInt(document.getElementById("data").value);
+            // if(isNaN(input)){
+            //     alert('Please enter a valid number');
+            //     return;
+            // }
+            data.push(input);
+             document.getElementById("result").innerHTML = data;
+        }
+        function displayPrime() {
+            let primeArr = [];
+            for (let dt of data) {
+                if (isPrime(dt)) {
+                    primeArr.push(dt);
+                }
+            }
+            document.getElementById("result").innerHTML = "Prime Numbers: " + primeArr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+    //find second greatest
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 24px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label id="nValue" value="">Enter 3 Numbers : </label>
+        <input type="text" placeholder="1st number"  id="a">
+        <input type="text"  placeholder="2nd number" id="b">
+        <input type="text"  placeholder="3rd number" id="c">
+        <button id="greatest" onclick="findSecondGreatest()">Find Greatest</button>
+    </div>
+    
+</body>
+<script>
+    function  findSecondGreatest() {
+         const a = parseInt(document.getElementById('a').value)
+         const b = parseInt(document.getElementById('b').value)
+         const c = parseInt(document.getElementById('c').value)
+            if(isNaN(a) || isNaN(b) || isNaN(c)) {
+                alert('please enter a valid number ')
+                return;
+            }
+            if(a>b) {
+                document.write(a+"greatest number");
+            }
+            else if(b>a && b>c) {
+                document.write(b+"greatest number");
+            }
+            
+            else {
+                document.write(c+"greatest number");
+            }
+            
+
+    }
+
+</script>
+</html>
